@@ -1,0 +1,140 @@
+<html lang="de-AT"><head>
+  <meta charset="utf-8">
+  <title>{{title}}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="stylesheet" type="text/css" media="screen" href="/assets/styles.css" /> -->
+  <link rel="stylesheet" href="https://use.typekit.net/aed7bpt.css" />
+  <style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fbbbff;
+  background-image: linear-gradient(
+    to right,
+    {{linearGradient}}
+  );
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+main {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 2rem;
+  max-width: 30rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+h1 {
+  font-family: brandon-grotesque, sans-serif;
+  font-size: 3rem;
+  text-align: center;
+  color: {{headingColor}};
+}
+
+.me {
+  width: 20rem;
+  object-fit: cover;
+  border-radius: 50%;
+  max-width: 100%;
+}
+
+ul {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+  margin: 0;
+}
+
+li:not(:first-child) {
+  margin-top: 2rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+.linkbutton {
+  background-image: linear-gradient(
+    to right,
+    {{linearGradient}}
+  );
+  width: 100%;
+  border-radius: 1.5rem;
+  height: 5rem;
+  overflow: hidden;
+  display: flex;
+}
+
+.linkimage {
+  height: 5rem;
+  width: 5rem;
+}
+
+.linktext {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: auto;
+  color: {{textColor}};
+  font-family: brandon-grotesque, sans-serif;
+  padding: 0 1rem;
+  width: 100%;
+}
+
+.linkname {
+  font-weight: 500;
+  font-size: 1.4rem;
+}
+
+.linkdescription {
+  opacity: 0.7;
+}
+</style>
+</head>
+<body>
+  <main>
+    <img class="me" src="https://res.cloudinary.com/dvdb/image/upload/c_fill,h_600,q_auto:best,w_600,f_auto/me-smaller.jpg" alt="Portrait von Mir">
+    <h1>{{title}}</h1>
+    <ul>
+              <li>
+          <a href="https://www.instagram.com/tini95/">
+            <div class="linkbutton">
+              <img alt="" class="linkimage" src="https://res.cloudinary.com/dvdb/image/fetch/c_fill,h_150,q_auto:best,w_150,f_auto/https://trello-attachments.s3.amazonaws.com/5c63f6519bbf4486099afc42/5c63fbf6c76ac001cda146a5/cb9a77b84a3abc6817550fbe9fc94dbb/Bild.png">              <div class="linktext">
+                                <div class="linkname">📷 Instagram</div>
+              </div>
+            </div>
+          </a>
+        </li>
+              <li>
+          <a href="https://www.instagram.com/a/r/?effect_id=980036925678154&amp;ch=NTVmZDZkMDNkYjMxNDZkMTU4MTlhYTk0YmI2YWY0ZjY=">
+            <div class="linkbutton">
+              <img alt="" class="linkimage" src="https://res.cloudinary.com/dvdb/image/fetch/c_fill,h_150,q_auto:best,w_150,f_auto/https://trello-attachments.s3.amazonaws.com/5c63f6519bbf4486099afc42/5c63f674ba878c3fbcbff177/2073b5fa0e4da3ebcaaeb877aae87ee7/4AFEA941-FC47-44DC-B1B1-40B31643360E.JPG">              <div class="linktext">
+                <div class="linkdescription">Schreibt mir eine Mail 📩</div>              <div class="linkname">📹 Try out my IG Filter</div>
+              </div>
+            </div>
+          </a>
+        </li>
+              <li>
+          <a href="mailto:hallo@martina.wien">
+            <div class="linkbutton">
+                            <div class="linktext">
+                <div class="linkdescription">Schreibt mir eine Mail 📩</div>                <div class="linkname">📧 E-Mail</div>
+              </div>
+            </div>
+          </a>
+        </li>
+          </ul>
+  </main>
+
+</body></html>

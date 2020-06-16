@@ -1,5 +1,0 @@
-[
-  {"from": "/home", "to": "/"},
-  {"from": "/blog/my-post.php", "to" :"/blog/my-post"},
-  {"from": "/seestadt", "to": "/photo-blog"}
-]

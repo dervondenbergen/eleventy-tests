@@ -6,7 +6,7 @@ class Test {
   }
 
   render(data) {
-    return data.redirects.map(r => {
+    return Object.values(data.redirects).map(r => {
       return `${r.from} ${r.to} 302`
     }).join('\n');
   }

@@ -8,5 +8,9 @@
 <body>
   <!-- Include the script that builds the page and powers Netlify CMS -->
   <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+  <script src="https://unpkg.com/netlify-cms-widget-native-color@3.0.0/dist/umd/native-color.min.js"></script>
+  <script>
+    CMS.registerWidget('color', NetlifyCMSWidgetNativeColor.Control);
+  </script>
 </body>
 </html>

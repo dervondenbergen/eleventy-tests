@@ -2,30 +2,98 @@ backend:
   name: github
   repo: dervondenbergen/eleventy-tests
 
-media_folder: "images"
+local_backend: true
+
+locale: de
+
+media_folder: 'images'
+
+media_library:
+  output_filename_only: true
+  name: cloudinary
+  config:
+    cloud_name: dvdb
+    api_key: 236491847433117
 
 collections:
-  - name: "links" # Used in routes, e.g., /admin/collections/blog
-    label: "Links" # Used in the UI
-    folder: "_data/links" # The path to the folder where the documents are stored
+  - label: Einstellungen
+    name: einstellungen
+    files:
+      - label: Einstellungen
+        name: einstellungen
+        file: "index.json"
+        editor:
+          preview: true
+        fields:
+          - label: Titel
+            name: title
+            widget: string
+          - label: Überschrift Farbe
+            name: headingColor
+            widget: color
+          - label: Text Farbe
+            name: textColor
+            widget: color
+          - label: Profil Bild
+            name: profilepicture
+            widget: image
+            required: false
+            media_library:
+              output_filename_only: true
+              name: cloudinary
+          - label: Hintergrund
+            name: background
+            widget: list
+            summary: "{{color}} - {{position}}%"
+            fields:
+              - label: Farbe
+                name: color
+                widget: color
+                default: "#ffffff"
+              - label: Position
+                name: position
+                widget: number
+                valueType: int
+                min: 0
+                max: 100
+  - name: redirect # Used in routes, e.g., /admin/collections/blog
+    label: Weiterleitungen # Used in the UI
+    label_singular: Weiterleitung
+    format: json
+    folder: _data/redirects # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    summary: Von "{{from}}" nach "{{to}}"
+    editor:
+      preview: false
     fields: # The fields for each document, usually in front matter
-      - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Featured Image", name: "thumbnail", widget: "image"}
-      - {label: "Rating (scale of 1-5)", name: "rating", widget: "number"}
-      - {label: "Body", name: "body", widget: "markdown"}
-  - name: "redirects" # Used in routes, e.g., /admin/collections/blog
-    label: "Redirects" # Used in the UI
-    folder: "_data/redirects" # The path to the folder where the documents are stored
+      - label: Von Ort
+        name: from
+        widget: string
+      - label: Nach Ort
+        name: to
+        widget: string
+  - name: links # Used in routes, e.g., /admin/collections/blog
+    label: Links # Used in the UI
+    label_singular: Link
+    format: json
+    folder: _data/links # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    summary: "{{text}}: {{url}} – {{description}}"
+    editor:
+      preview: false
     fields: # The fields for each document, usually in front matter
-      - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Featured Image", name: "thumbnail", widget: "image"}
-      - {label: "Rating (scale of 1-5)", name: "rating", widget: "number"}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - label: Text
+        name: text
+        widget: string
+      - label: Url
+        name: url
+        widget: string
+      - label: Beschreibung
+        name: description
+        widget: string
+        required: false
+      - label: Bild
+        name: image
+        widget: image
+        multiple: false
+        required: false

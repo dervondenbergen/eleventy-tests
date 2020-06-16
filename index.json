@@ -1,0 +1,22 @@
+{
+  "color": "#e6ff38",
+  "title": "Felix De Montis",
+  "background": [
+    {
+      "color": "#beff4e",
+      "position": 0
+    },
+    {
+      "color": "#ff4b1d",
+      "position": 50
+    },
+    {
+      "color": "#5e6cff",
+      "position": 100
+    }
+  ],
+  "headingColor": "#333333",
+  "textColor": "#f4f4f4",
+  "profilepicture": "/images/YpetF-QT.jpg",
+  "image": ""
+}
